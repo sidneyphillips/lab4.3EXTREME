@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,10 +10,20 @@ import javafx.stage.Stage;
 
 public class GameCode {
 
-	public GameCode() {
-		// TODO Auto-generated constructor stub
+	private ArrayList<Integer> pattern;
+	void addToList(int next)
+	{
+		pattern.add(next);
 	}
-	@Override
+	int getIndex(int index)
+	{
+		return this.pattern.get(index);		
+	}
+	int getSize()
+	{
+		return this.pattern.size();
+	}
+
 	public void start(Stage primaryStage) throws Exception 
 	{
 		primaryStage.setTitle("Simon Says");
