@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 public class GameCode extends Application {
@@ -27,15 +28,22 @@ public class GameCode extends Application {
 	public void start(Stage primaryStage) throws Exception 
 	{
 		primaryStage.setTitle("Simon Says");
+		FlowPane pane = new FlowPane();
 		FileInputStream pic1 = new FileInputStream("assets/png/r0.png");
 		Image image = new Image(pic1);
 		ImageView imageView = new ImageView(image);
 		Button button = new Button("",imageView);
+		button.setMaxSize(400, 400);
+		button.setMinSize(400, 400);
 		FileInputStream pic2 = new FileInputStream("assets/png/g0.png");
 		Image image2 = new Image(pic1);
 		ImageView imageView2 = new ImageView(image2);
 		Button button2 = new Button("",imageView2);
-		 Scene scene = new Scene(button, 500, 500);
+		button2.setMaxSize(400, 400);
+		button2.setMinSize(400, 400);
+		pane.getChildren().add(button);
+		pane.getChildren().add(button2);
+		 Scene scene = new Scene(pane, 1000, 1000);
 	     primaryStage.setScene(scene);
 	     primaryStage.show();
 	}
