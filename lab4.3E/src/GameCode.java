@@ -46,14 +46,14 @@ public class GameCode extends Application {
 		Image image3 = new Image(pic3);
 		ImageView imageView3 = new ImageView(image3);
 		Button button3 = new Button("",imageView3);
-		button2.setMaxSize(394, 400);
-		button2.setMinSize(394, 400);
+		button3.setMaxSize(394, 400);
+		button3.setMinSize(394, 400);
 		FileInputStream pic4 = new FileInputStream("assets/png/y0.png");
 		Image image4 = new Image(pic4);
 		ImageView imageView4 = new ImageView(image4);
 		Button button4 = new Button("",imageView4);
-		button2.setMaxSize(394, 400);
-		button2.setMinSize(394, 400);
+		button4.setMaxSize(394, 400);
+		button4.setMinSize(394, 400);
 		pane.getChildren().add(button);
 		pane.getChildren().add(button2);
 		pane.getChildren().add(button3);
