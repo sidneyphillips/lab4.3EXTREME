@@ -1,7 +1,11 @@
+
+
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -36,6 +40,15 @@ public class GameCode extends Application {
 		Button button = new Button("",imageView);
 		button.setMaxSize(394, 400);
 		button.setMinSize(394, 400);
+		button.setOnAction(new EventHandler<ActionEvent>() 
+		{
+			  
+	            public void handle(ActionEvent event) 
+	            {
+	                System.out.println("Hello World!");
+	            }
+	    }
+		);
 		FileInputStream pic2 = new FileInputStream("assets/png/g0.png");
 		Image image2 = new Image(pic2);
 		ImageView imageView2 = new ImageView(image2);
@@ -59,7 +72,7 @@ public class GameCode extends Application {
 		pane.getChildren().add(button3);
 		pane.getChildren().add(button4);
 		
-		 Scene scene = new Scene(pane, 1000, 1000);
+		 Scene scene = new Scene(pane, 788, 800);
 	     primaryStage.setScene(scene);
 	     primaryStage.show();
 	}
