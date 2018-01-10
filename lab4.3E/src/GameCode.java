@@ -3,6 +3,7 @@
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -29,9 +30,56 @@ public class GameCode extends Application {
 	{
 		return this.pattern.size();
 	}
+	public static void pathToggler(String input)
+	{
+		if(input.equals("assets/png/r0.png"))
+		{
+			input = "assets/png/r1.png";
+		}
+		if(input.equals("assets/png/r1.png"))
+		{
+			
+		}
+		if(input.equals("assets/png/g0.png"))
+		{
+			
+		}
+		if(input.equals("assets/png/g1.png"))
+		{
+			
+		}
+		if(input.equals("assets/png/b0.png"))
+		{
+			
+		}
+		if(input.equals("assets/png/b1.png"))
+		{
+			
+		}
+		if(input.equals("assets/png/y0.png"))
+		{
+			
+		}
+		if(input.equals("assets/png/y1.png"))
+		{
+			
+		}
+		
+	}
 
 	public void start(Stage primaryStage) throws Exception 
 	{
+		long timer = System.nanoTime();
+		new AnimationTimer()
+		{
+
+			
+			public void handle(long now) {
+				
+				
+			}
+			
+		}.start();
 		primaryStage.setTitle("Simon Says");
 		TilePane pane = new TilePane();
 		FileInputStream pic1 = new FileInputStream("assets/png/r0.png");
@@ -40,15 +88,6 @@ public class GameCode extends Application {
 		Button button = new Button("",imageView);
 		button.setMaxSize(394, 400);
 		button.setMinSize(394, 400);
-		button.setOnAction(new EventHandler<ActionEvent>() 
-		{
-			  
-	            public void handle(ActionEvent event) 
-	            {
-	                System.out.println("Hello World!");
-	            }
-	    }
-		);
 		FileInputStream pic2 = new FileInputStream("assets/png/g0.png");
 		Image image2 = new Image(pic2);
 		ImageView imageView2 = new ImageView(image2);
@@ -67,10 +106,23 @@ public class GameCode extends Application {
 		Button button4 = new Button("",imageView4);
 		button4.setMaxSize(394, 400);
 		button4.setMinSize(394, 400);
+		FileInputStream picchange = new FileInputStream("assets/png/r1.png");
+		Image imagec = new Image(picchange);
+		ImageView imageViewc = new ImageView(imagec);
 		pane.getChildren().add(button);
 		pane.getChildren().add(button2);
 		pane.getChildren().add(button3);
 		pane.getChildren().add(button4);
+		
+		button.onMousePressedProperty(new EventHandler<ActionEvent>() 
+		{
+			  
+	            public void handle(ActionEvent event) 
+	            {
+	               button.setGraphic(imageViewc);
+	            }
+	    }
+		);
 		
 		 Scene scene = new Scene(pane, 788, 800);
 	     primaryStage.setScene(scene);
